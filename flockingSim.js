@@ -5,7 +5,7 @@ import { GUI } from 'gui';
 import { GPUComputationRenderer } from 'compute';
 
 /* TEXTURE WIDTH FOR SIMULATION */
-const WIDTH = 75;
+const WIDTH = 50;
 
 const BIRDS = WIDTH * WIDTH;
 
