@@ -123,20 +123,16 @@ let velocityUniforms;
 let birdUniforms;
 
 let targetClock = 0; //agents will lose interest over time 
-let frames = 0;
 
-let renderTarget = new THREE.WebGLRenderTarget( window.innerWidth, window.innerHeight );
 let video = document.getElementById('video');
 
-// video.onloadeddata = function () {
-//     video.play();
-// };
+
 
 init();
 animate();
 
 function init() {
-    // video.play();
+    video.play();
     container = document.createElement( 'div' );
     document.body.appendChild( container );
 
@@ -148,7 +144,7 @@ function init() {
     videoTexture.needsUpdate = true;
 
     scene.background = new THREE.Color( 0xffffff );
-    // scene.background = videoTexture;
+    scene.background = videoTexture;
     scene.fog = new THREE.Fog( 0xffffff, 100, 1000 );
 
     
@@ -159,11 +155,6 @@ function init() {
     // renderer.setClearColor( 0x000000, 0 ); // the default
     initComputeRenderer();
 
-
-    //display frame rate in corner 
-    stats = new Stats();
-    container.appendChild( stats.dom );
-
     container.style.touchAction = 'none';
     container.addEventListener( 'pointermove', onPointerMove );
     container.addEventListener( 'click', onClick );
@@ -171,7 +162,7 @@ function init() {
 
     window.addEventListener( 'resize', onWindowResize );
 
-    const gui = new GUI();
+    // const gui = new GUI();
 
 
     const effectController = {
@@ -192,10 +183,10 @@ function init() {
 
     valuesChanger();
 
-    gui.add( effectController, 'separation', 0.0, 100.0, 1.0 ).onChange( valuesChanger );
-    gui.add( effectController, 'alignment', 0.0, 100, 0.001 ).onChange( valuesChanger );
-    gui.add( effectController, 'cohesion', 0.0, 100, 0.025 ).onChange( valuesChanger );
-    gui.close();
+    // gui.add( effectController, 'separation', 0.0, 100.0, 1.0 ).onChange( valuesChanger );
+    // gui.add( effectController, 'alignment', 0.0, 100, 0.001 ).onChange( valuesChanger );
+    // gui.add( effectController, 'cohesion', 0.0, 100, 0.025 ).onChange( valuesChanger );
+    // gui.close();
 
     initBirds();
 
@@ -353,7 +344,6 @@ function animate() {
 
     requestAnimationFrame( animate );
     render();
-    stats.update();
     videoTexture.needsUpdate = true;
 }
 
