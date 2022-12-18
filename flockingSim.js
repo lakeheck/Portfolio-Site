@@ -344,7 +344,6 @@ function animate() {
 
     requestAnimationFrame( animate );
     render();
-    videoTexture.needsUpdate = true;
 }
 
 
