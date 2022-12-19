@@ -206,8 +206,8 @@ function initMobile() {
     camera.position.z = 350;
 
     scene = new THREE.Scene();
-    const videoTexture = new THREE.VideoTexture(video);
-    videoTexture.needsUpdate = true;
+    // const videoTexture = new THREE.VideoTexture(video);
+    // videoTexture.needsUpdate = true;
 
     scene.background = new THREE.Color( 0x000000 );
     // scene.background = videoTexture;
@@ -377,7 +377,7 @@ function animate() {
 
     requestAnimationFrame( animate );
     if(isMobile()){
-        renderWithoutBirds();
+        return;
     }
     else {
         render();
