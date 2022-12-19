@@ -367,7 +367,7 @@ function render() {
     velocityUniforms[ 'target' ].value.set( 0.5 * mouseX / windowHalfX, - 0.5 * mouseY / windowHalfY, 0 );
     
     
-    if (targetClock > 5){//birds lose interest after 5 seconds
+    if (targetClock > 2){//birds lose interest after 5 seconds
         mouseX = 10000;
         mouseY = 10000;
     }
