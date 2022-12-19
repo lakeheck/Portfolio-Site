@@ -127,14 +127,10 @@ let targetClock = 0; //agents will lose interest over time
 let video = document.getElementById('video');
 
 
-if(isMobile()){
-    initMobile();
-}
-else{
+if(isMobile()==false){ //if mobile we just want to display the links and a picture
     init();
+    animate();
 }
-
-animate();
 
 function init() {
     video.play();
@@ -194,34 +190,6 @@ function init() {
     // gui.close();
 
     initBirds();
-
-}
-
-function initMobile() {
-    video.play();
-    container = document.createElement( 'div' );
-    document.body.appendChild( container );
-
-    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 150, 3000 );
-    camera.position.z = 350;
-
-    scene = new THREE.Scene();
-    // const videoTexture = new THREE.VideoTexture(video);
-    // videoTexture.needsUpdate = true;
-
-    scene.background = new THREE.Color( 0x000000 );
-    // scene.background = videoTexture;
-    scene.fog = new THREE.Fog( 0xffffff, 100, 1000 );
-    
-    renderer = new THREE.WebGLRenderer( );
-    renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    container.appendChild( renderer.domElement );
-
-    container.addEventListener( 'pointermove', onPointerMove );
-    container.addEventListener( 'click', onClick );
-    
-    window.addEventListener( 'resize', onWindowResize );
 
 }
 
@@ -355,7 +323,7 @@ function onWindowResize() {
 
     renderer.setSize( window.innerWidth, window.innerHeight );
 
-}h
+}
 
 function onPointerMove( event ) {
 
@@ -376,12 +344,7 @@ function onClick( event ) { //reset mouse location
 function animate() {
 
     requestAnimationFrame( animate );
-    if(isMobile()){
-        return;
-    }
-    else {
-        render();
-    }
+    render();
 }
 
 function renderWithoutBirds(){
