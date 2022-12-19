@@ -221,7 +221,7 @@ function initMobile() {
     // renderer.setClearColor( 0x000000, 0 ); // the default
     // initComputeRenderer();
 
-    container.style.touchAction = 'none';
+    // container.style.touchAction = 'none';
     container.addEventListener( 'pointermove', onPointerMove );
     container.addEventListener( 'click', onClick );
     //
