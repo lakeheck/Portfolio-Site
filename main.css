@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	background-color: #000;
-	color: #fff;
+	color: rgb(0, 0, 0);
 	font-family: Monospace;
 	font-size: 13px;
 	line-height: 0;
@@ -76,7 +76,7 @@ a, button, input, select {
 		border: 0;
 		border: 1px solid rgb(255, 255, 255);
 		border-radius: 4px;
-		color: #ffffff;
+		color: #000000;
 		padding: 12px 18px;
 		text-transform: uppercase;
 		cursor: pointer;
