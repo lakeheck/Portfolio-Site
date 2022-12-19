@@ -209,52 +209,19 @@ function initMobile() {
     const videoTexture = new THREE.VideoTexture(video);
     videoTexture.needsUpdate = true;
 
-    scene.background = new THREE.Color( 0xffffff );
-    scene.background = videoTexture;
+    scene.background = new THREE.Color( 0x000000 );
+    // scene.background = videoTexture;
     scene.fog = new THREE.Fog( 0xffffff, 100, 1000 );
-
     
     renderer = new THREE.WebGLRenderer( );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     container.appendChild( renderer.domElement );
-    // renderer.setClearColor( 0x000000, 0 ); // the default
-    // initComputeRenderer();
 
-    // container.style.touchAction = 'none';
     container.addEventListener( 'pointermove', onPointerMove );
     container.addEventListener( 'click', onClick );
-    //
-
+    
     window.addEventListener( 'resize', onWindowResize );
-
-    // const gui = new GUI();
-
-
-    // const effectController = {
-    //     separation: 20.0,
-    //     alignment: 20.0,
-    //     cohesion: 20.0,
-    //     freedom: 0.75
-    // };
-
-    // const valuesChanger = function () {
-
-    //     velocityUniforms[ 'separationDistance' ].value = effectController.separation;
-    //     velocityUniforms[ 'alignmentDistance' ].value = effectController.alignment;
-    //     velocityUniforms[ 'cohesionDistance' ].value = effectController.cohesion;
-    //     velocityUniforms[ 'freedomFactor' ].value = effectController.freedom;
-
-    // };
-
-    // valuesChanger();
-
-    // gui.add( effectController, 'separation', 0.0, 100.0, 1.0 ).onChange( valuesChanger );
-    // gui.add( effectController, 'alignment', 0.0, 100, 0.001 ).onChange( valuesChanger );
-    // gui.add( effectController, 'cohesion', 0.0, 100, 0.025 ).onChange( valuesChanger );
-    // gui.close();
-
-    // initBirds();
 
 }
 
