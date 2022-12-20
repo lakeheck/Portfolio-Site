@@ -45,6 +45,12 @@ a, button, input, select {
 	z-index: 2 !important; /* TODO Solve this in HTML */
 }
 
+@media screen and (max-width:450px) {
+	body{
+		background-image: url('mobilebg.jpg');
+	}
+}
+
 @media all and ( max-width: 640px ) {
 	.lil-gui.root { 
 		right: auto;
